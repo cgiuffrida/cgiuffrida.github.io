@@ -1,0 +1,154 @@
+#header {
+    text-align: center;
+    font-size: 36px;
+    font-family: 'M PLUS U';
+    background-color: lightblue;
+}
+
+#header:hover {
+    background-color:burlywood;
+}
+
+#navi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 10px 0;
+    font-size: 24px;
+}
+
+#navi a {
+    display: inline-block;
+    color: black;
+    padding: 10px 18px;
+    text-decoration: none;
+}
+
+#navi a:hover {
+    background-color: burlywood;
+    color: white;
+}
+
+#navi a.current {
+    font-weight: bold;
+    border-bottom: 3px solid black;
+}
+
+#main {
+    background-color: lightblue;
+}
+
+hr {
+    border: 0;
+    border-top: 2px solid black;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: lightblue;
+}
+
+#row-one {
+    display: flex;
+    justify-content: center;
+}
+
+#row-two {
+    display: flex;
+    justify-content: center;
+}
+
+.imges-top {
+    text-align: center;
+    border: 1px solid black;
+    background-color: burlywood;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.imges-bottom {
+    text-align: center;
+    border: 1px solid black;
+    background-color: burlywood;
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.img-text {
+    font-style:oblique;
+    text-align: center;
+}
+
+#bottom-text {
+    text-align: center;
+}
+
+#footee {
+    text-align: center;
+    background-color: lightblue;
+}
+
+#footee p {
+    color: darkmagenta;
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+#survey {
+    text-align: center;
+}
+
+#emails {
+    text-align: center;
+}
+
+#table-one {
+    margin: 95px auto 0;
+    width: fit-content;
+}
+
+#table-one table {
+    border: 2px solid black;
+    border-collapse: collapse;
+    min-width: 630px;
+    font-size: 24px;
+}
+
+#table-one th {
+    background-color:burlywood;
+    border: 2px solid black;
+    padding: 14px;
+}
+
+#table-one td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 12px 45px;
+}
+
+#list-one {
+    width: 70%;
+    margin: 110px auto 100px;
+    font-size: 24px;
+}
+
+#list-one p {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#list-one ul {
+    text-align: left;
+    margin: 0 auto;
+}
