@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <input id="guessInput" type="number">
+    <button id="guessButton">Guess!</button>
+    <p id="guessMessage">Guess a number between 1 and 99</p>
+    <p id="remainingGuessAmountText">Attempts Remaining: <span id="remainingGuessAmount">7</span></p>
+    <p id="previousGuesses">Previous guesses:</p>
+    <p id="userGuessArray"></p>
+    <p>Games Won: <span id="gamesWonAmount">0</span></p>
+    <p>Games Lost: <span id="gamesLostAmount">0</span></p>
+    <button id="resetButton" style="display:none">Reset?</button>
+
+    <script src="scripts/script.js" defer></script>
+</body>
+
+</html>
