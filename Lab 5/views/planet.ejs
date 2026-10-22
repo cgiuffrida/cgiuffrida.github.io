@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets website</title>
+    <%- include('partials/includes.ejs')%>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <%=name%>
+        </h1>
+        <%- include('partials/navbar.ejs')%>
+    </header>
+    <main>
+        <div id="content">
+    <figure>
+        <img class="planet_img" src="<%= image %>" alt="<%= name %>">
+    </figure>
+
+    <article>
+        <p><%= description %></p>
+        <% if (name !== "Asteroids" && name !== "Comets") { %>
+            <p>Distance From Sun = <%= distanceFromSun %></p>
+            <p>Length of Year = <%= yearLength %></p>
+            <p>Radius = <%= radius %></p>
+            <p>One Earth Day = <%= oneEarthDay %></p>
+            <p>Number of Moons = <%= moons %></p>
+        <% } %>
+        <a href="<%= websiteLink %>">Website Link</a>
+    </article>
+</div>
+    </main>
+    <footer>
+        <%- include('partials/fun.ejs')%>
+    </footer>
+</body>
+
+</html>
+
+<!-- image: string;
+distanceFromSun: string;
+yearLength: string;
+description: string;
+radius: number;
+websiteLink: string;
+oneEarthDay: string;
+moons: number; -->

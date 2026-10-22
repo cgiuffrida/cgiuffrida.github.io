@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Picture of the Day</title>
+    <%- include('partials/includes.ejs') %>
+        <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>NASA Picture of the Day</h1>
+        <%- include('partials/navbar.ejs') %>
+    </header>
+
+    <main>
+        <% if (error) { %>
+            <p>
+                <%= error %>
+            </p>
+            <% } else { %>
+                <section class="pod-layout">
+                    <figure>
+                        <% if (pod.media_type==="image" && pod.hdurl) { %>
+                            <img class="pod-image" src="<%= pod.hdurl %>" alt="<%= pod.title %>">
+                            <% } else { %>
+                                <p>View today's featured media on NASA's website.</p>
+                                <% } %>
+
+                                    <a href="<%= pod.url %>">View on NASA's website</a>
+                    </figure>
+
+                    <article>
+                        <h2>
+                            <%= pod.title %>
+                        </h2>
+                        <p>Date: <%= pod.date %>
+                        </p>
+                        <div class="pod-explanation">
+                            <%- pod.explanation %>
+                        </div>
+                    </article>
+                </section>
+                <% } %>
+    </main>
+
+    <footer>
+        <%- include('partials/fun.ejs') %>
+    </footer>
+</body>
+
+</html>
