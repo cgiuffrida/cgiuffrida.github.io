@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= formObject.authorId ? 'Edit Author' : 'New Author' %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include('partials/nav') %>
+    <h1>
+        <%= formObject.authorId ? 'Edit Author' : 'New Author' %>
+    </h1>
+    <% if (Object.keys(formErrors).length> 0) { %>
+        <div role="alert">
+            <p>Please correct the following:</p>
+
+            <ul>
+                <% for (const message of Object.values(formErrors)) { %>
+                    <li>
+                        <%= message %>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+        <% } %>
+
+            <form action="<%= formObject.authorId ? '/updateAuthor' : '/insertAuthor' %>" method="POST">
+                <input type="hidden" name="authorId" value="<%= formObject.authorId %>">
+
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" value="<%= formObject.firstName || '' %>">
+
+                <br><br>
+
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" value="<%= formObject.lastName || '' %>">
+
+                <br><br>
+
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" id="dob" value="<%= formObject.dob || '' %>">
+
+                <br><br>
+
+                <label for="dod">Date of Death</label>
+                <input type="date" name="dod" id="dod" value="<%= formObject.dod || '' %>">
+
+                <br><br>
+
+                <label for="gender">Gender</label>
+                <input type="text" name="gender" id="gender" value="<%= formObject.gender || '' %>">
+
+                <br><br>
+
+                <label for="profession">Profession</label>
+                <input type="text" name="profession" id="profession" value="<%= formObject.profession || '' %>">
+
+                <br><br>
+
+                <label for="country">Country</label>
+                <input type="text" name="country" id="country" value="<%= formObject.country || '' %>">
+
+                <br><br>
+
+                <button type="submit">
+                    <%= formObject.authorId ? 'Update Author' : 'Create Author' %>
+                </button>
+            </form>
+
+            <br>
+
+            <a href="/authors">Back to Authors</a>
+
+</body>
+
+</html>

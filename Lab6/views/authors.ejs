@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <h1>Authors</h1>
+
+    <p><a href="/newAuthor">Add New Author</a></p>
+
+    <div class="author-list">
+        <% for (const author of authors) { %>
+            <div class="list-item">
+                <span>
+                    <%= author.firstName %> <%= author.lastName %>
+                </span>
+
+                <a href="/editAuthor?authorId=<%= author.authorId %>">
+                    Edit
+                </a>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

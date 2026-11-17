@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Quote</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <h1>New Quote</h1>
+
+    <% if (Object.keys(formErrors).length > 0) { %>
+        <div role="alert">
+            <p>Please correct the following:</p>
+
+            <ul>
+                <% for (const message of Object.values(formErrors)) { %>
+                    <li><%= message %></li>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+
+    <form action="/insertQuote" method="POST">
+        <label for="quote">Quote</label>
+        <br>
+        <textarea id="quote" name="quote"
+                  rows="4" cols="50"
+                  maxlength="200"><%= formObject.quote %></textarea>
+
+        <br><br>
+
+        <label for="authorId">Author</label>
+        <select id="authorId" name="authorId">
+            <option value="">Select an author</option>
+
+            <% for (const author of formData.authors) { %>
+                <option
+                    value="<%= author.authorId %>"
+                    <%= String(author.authorId) === String(formObject.authorId)
+                        ? 'selected' : '' %>>
+                    <%= author.firstName %> <%= author.lastName %>
+                </option>
+            <% } %>
+        </select>
+
+        <br><br>
+
+        <label for="category">Category</label>
+        <select id="category" name="category">
+            <option value="">Select a category</option>
+
+            <% for (const item of formData.categories) { %>
+                <option
+                    value="<%= item.category %>"
+                    <%= item.category === formObject.category
+                        ? 'selected' : '' %>>
+                    <%= item.category %>
+                </option>
+            <% } %>
+        </select>
+
+        <br><br>
+
+        <label for="likes">Likes</label>
+        <input type="number" id="likes" name="likes"
+               min="0" max="2147483647" step="1"
+               value="<%= formObject.likes %>">
+
+        <br><br>
+
+        <button type="submit">Create Quote</button>
+    </form>
+</body>
+</html>

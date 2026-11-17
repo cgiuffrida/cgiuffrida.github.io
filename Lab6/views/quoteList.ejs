@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/nav') %>
+
+    <h1>Quotes</h1>
+
+    <p><a href="/newQuote">Add New Quote</a></p>
+
+    <div class="quote-list">
+        <% for (const quote of quotes) { %>
+            <div class="list-item">
+                <span><%= quote.quote %></span>
+
+                <a href="/editQuote?quoteId=<%= quote.quoteId %>">
+                    Edit
+                </a>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
